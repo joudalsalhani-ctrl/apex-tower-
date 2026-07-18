@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#08121d" />
+  <title>Apex One Tower</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div id="app">
+    <canvas id="scene"></canvas>
+
+    <header class="topbar glass">
+      <div>
+        <div class="eyebrow">INTERACTIVE ARCHITECTURAL MODEL</div>
+        <h1>APEX ONE TOWER</h1>
+        <p>Drag to rotate · Pinch to zoom · Tap any floor</p>
+      </div>
+      <button id="resetCamera" class="icon-btn" aria-label="Reset camera">↻</button>
+    </header>
+
+    <aside id="floorRail" class="floor-rail glass" aria-label="Floor selector"></aside>
+
+    <section id="floorCard" class="floor-card glass">
+      <div class="card-copy">
+        <div class="eyebrow">SELECTED LEVEL</div>
+        <h2 id="floorName">Ground Floor</h2>
+        <p id="floorUse">Lobby · Reception · Retail · Lounge</p>
+        <div class="stats">
+          <span id="floorHeight">8.0 m high</span>
+          <span id="floorArea">2,400 m²</span>
+        </div>
+      </div>
+      <button id="exploreFloor" class="primary-btn">Explore floor</button>
+    </section>
+
+    <nav class="toolbar glass">
+      <button id="showAll" class="tool active"><span>◉</span>Show all</button>
+      <button id="hideAbove" class="tool"><span>▱</span>Hide above</button>
+      <button id="isolate" class="tool"><span>◇</span>Isolate</button>
+      <button id="explode" class="tool"><span>≋</span>Explode</button>
+      <button id="night" class="tool"><span>☾</span>Night</button>
+    </nav>
+
+    <div id="interiorPanel" class="interior-panel glass hidden">
+      <div class="interior-head">
+        <div>
+          <div class="eyebrow">FLOOR INTERIOR</div>
+          <h2 id="interiorTitle">Ground Floor</h2>
+        </div>
+        <button id="closeInterior" class="icon-btn">×</button>
+      </div>
+      <div id="floorPlan" class="floor-plan"></div>
+      <p class="interior-note">Concept layout for navigation and learning. Final room sizes will follow your measurements.</p>
+    </div>
+
+    <div id="loading">Loading 3D tower…</div>
+  </div>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+    }
+  }
+  </script>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
