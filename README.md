@@ -27,3 +27,5 @@ A mobile-first interactive 3D architectural concept.
 5. Save and open the generated Pages URL.
 
 Internet access is required because Three.js loads from a CDN.
+
+Deployment update
